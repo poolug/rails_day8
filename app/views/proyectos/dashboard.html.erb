@@ -1,0 +1,30 @@
+<%= link_to 'Volver al Inicio', root_path %><br>
+
+<form>
+    <label for="state">Estado</label>
+    <select name="state">
+        <option value="propuesta">Propuesta</option>
+        <option value="progreso">En progreso</option>
+        <option value="terminado">Terminado</option>
+    </select>
+    <button type="submit" class="btn btn-primary">Buscar</button>
+</form>
+
+<table class="table">
+    <tr>
+        <th>Nombre</th>
+        <th>Descripcion</th>
+        <th>Fecha de Inicio</th>
+        <th>Fecha de Término</th>
+        <th>Estado</th>
+    </tr>
+    <% @projects.each do |p| %>
+        <tr>
+            <td><%= p.name %></td>
+            <td><%= p.description %></td>
+            <td><%= p.date_start %></td>
+            <td><%= p.date_end %></td>
+            <td><%= p.state %></td>
+        </tr>
+    <% end %>
+</table>

@@ -1,0 +1,15 @@
+<%= link_to 'Volver al Inicio', root_path %><br>
+<%= link_to 'Ver proyectos', proyectos_dashboard_path %><br>
+
+<% if @project.errors.any? %>
+    <div id="error_explanation">
+        <h2>No se pudo crear el proyecto, por las siguientes razones:</h2>
+        <ul>
+            <% @project.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+        </ul>
+    </div>
+    <% else %>
+    <h1>¡El proyecto ha sido guardado con exito!</h1>
+<% end  %>
